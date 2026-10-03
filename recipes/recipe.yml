@@ -17,6 +17,21 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  # Install some fonts, including Nerd Fonts and Google Fonts.
+  - type: fonts
+    fonts:
+        nerd-fonts:
+          - FiraCode # don't add spaces or "Nerd Font" suffix
+          - Hack
+          - SourceCodePro
+          - Terminus
+          - JetBrainsMono
+          - NerdFontsSymbolsOnly
+        google-fonts:
+          - Roboto
+          - Open Sans
+          - Inter
+
   - type: dnf
     repos:
       copr:
