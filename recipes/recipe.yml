@@ -43,7 +43,7 @@ modules:
     install:
       skip-unavailable: true
       packages:
-        - repo: protonvpn-stable-release-1.0.4-1.noarch
+        - repo: protonvpn-stable-release
           packages:
             - proton-vpn-gnome-desktop
 
