@@ -34,18 +34,12 @@ modules:
 
   # Install system packages via dnf
   - type: dnf
-    repos:
-      cleanup: true # removes any added repos after installing packages
-      keys:
-        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/public_key.asc
     install:
-      skip-unavailable: true
       packages:
         - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
 
   - type: dnf
     install:
-      skip-unavailable: true
       packages:
         - proton-vpn-gnome-desktop
 
