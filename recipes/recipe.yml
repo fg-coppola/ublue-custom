@@ -36,15 +36,17 @@ modules:
   - type: dnf
     repos:
       cleanup: true # removes any added repos after installing packages
-      files:
-        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
       keys:
         - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/public_key.asc
     install:
       skip-unavailable: true
       packages:
-        - repo: protonvpn-stable-release
-          packages:
-            - proton-vpn-gnome-desktop
+        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
+
+  - type: dnf
+    install:
+      skip-unavailable: true
+      packages:
+        - proton-vpn-gnome-desktop
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
