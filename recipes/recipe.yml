@@ -32,15 +32,9 @@ modules:
           - Open Sans
           - Inter
 
-  # Install system packages via dnf
-  - type: dnf
-    install:
-      packages:
-        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
-
-  - type: dnf
-    install:
-      packages:
-        - proton-vpn-gnome-desktop
-
+  # Install ProtonVPN client with systemd offline mode to avoid failure during post installation
+  - type: script
+    scripts:
+      - protonvpn.sh
+      
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
