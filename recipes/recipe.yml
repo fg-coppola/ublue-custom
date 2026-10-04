@@ -46,6 +46,7 @@ modules:
       packages:
         - megasync
         - dolphin-megasync
+        - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
