@@ -36,5 +36,23 @@ modules:
   - type: script
     scripts:
       - protonvpn.sh
+
+  # Install default native packages for my workflow
+  - type: dnf
+    repos:
+      cleanup: true
+      nonfree: rpmfusion
+    install:
+      packages:
+        - megasync
+        - dolphin-megasync
+  
+  # Install default flatpak packages for my workflow
+  - type: default-flatpaks
+    configurations:
+      - notify: true
+        scope: user
+        install:
+          - com.discordapp.Discord
       
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
