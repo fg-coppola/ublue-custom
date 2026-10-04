@@ -1,0 +1,2 @@
+# Set battery charging limit to 80% and grant write permissions to the wheel group
+ACTION=="add", SUBSYSTEM=="power_supply", KERNEL=="BAT[0-9]", ATTR{charge_control_end_threshold}="80", MODE="0664", GROUP="wheel"
