@@ -1,0 +1,2 @@
+# Turn on ASUS keyboard backlight at boot
+SUBSYSTEM=="leds", KERNEL=="asus::kbd_backlight", ATTR{brightness}="1"
