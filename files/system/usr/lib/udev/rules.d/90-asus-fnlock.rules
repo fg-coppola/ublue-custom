@@ -1,2 +1,0 @@
-# Enable Fn-lock by default via WMI platform driver
-ACTION=="add", SUBSYSTEM=="platform", DRIVERS=="asus-nb-wmi", ATTR{fn_lock}="1"
