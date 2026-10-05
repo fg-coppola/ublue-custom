@@ -51,7 +51,7 @@ modules:
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
     configurations:
-      - notify: true
+      - notify: false # avoids notification at every boot
         scope: user
         install:
           - com.discordapp.Discord
