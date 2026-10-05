@@ -1,0 +1,11 @@
+[Unit]
+Description=Reset FocalTech fingerprint sensor after resume
+After=suspend.target hibernate.target hybrid-sleep.target
+
+[Service]
+Type=oneshot
+# Restart the fingerprint daemon to clear hardware interrupt locks
+ExecStart=/usr/bin/systemctl restart fprintd
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target

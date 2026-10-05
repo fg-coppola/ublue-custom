@@ -1,0 +1,2 @@
+# Disable autosuspend for FocalTech FT9366 (2808:a658) fingerprint reader
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="2808", ATTR{idProduct}=="a658", ATTR{power/control}="on", ATTR{power/autosuspend}="-1"

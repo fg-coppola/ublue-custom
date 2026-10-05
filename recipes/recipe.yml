@@ -32,6 +32,17 @@ modules:
           - Open Sans
           - Inter
 
+  # Install custom fprinting shim for my ASUS Vivobook fingerprint reader
+  - type: script
+    scripts:
+      - fingerprint.sh
+
+  # Enable the custom resume service for the fingerprint reader to work after suspend
+  - type: systemd
+    system:
+      enabled:
+        - fprintd-resume.service
+
   # Install ProtonVPN client with systemd offline mode to avoid failure during post installation
   - type: script
     scripts:
