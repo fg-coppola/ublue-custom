@@ -68,6 +68,8 @@ modules:
         - vscode.repo
       keys:
         - https://packages.microsoft.com/keys/microsoft.asc
+      copr:
+        - jdxcode/mise
       nonfree: rpmfusion
     install:
       packages:
@@ -75,6 +77,7 @@ modules:
         - dolphin-megasync
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
         - code
+        - mise
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
