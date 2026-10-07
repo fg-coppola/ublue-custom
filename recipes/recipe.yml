@@ -64,12 +64,17 @@ modules:
   - type: dnf
     repos:
       cleanup: true
+      files:
+        - vscode.repo
+      keys:
+        - https://packages.microsoft.com/keys/microsoft.asc
       nonfree: rpmfusion
     install:
       packages:
         - megasync
         - dolphin-megasync
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+        - code
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
