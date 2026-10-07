@@ -88,6 +88,7 @@ modules:
         - git-lfs
         - git-delta
         - gh
+        - cosign
         - gdb
         - strace
         - ltrace
