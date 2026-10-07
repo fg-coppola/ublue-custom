@@ -78,6 +78,7 @@ modules:
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
         - code
         - mise
+        - podman-docker
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
@@ -86,6 +87,12 @@ modules:
         scope: user
         install:
           - com.discordapp.Discord
+
+  - type: systemd
+    user:
+      enabled:
+        # Enable the rootless podman socket for all users upon login
+        - podman.socket
 
 
   # 5. FINALIZATION
