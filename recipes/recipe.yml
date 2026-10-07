@@ -60,7 +60,7 @@ modules:
     scripts:
       - protonvpn.sh
 
-  # Install default native packages for my workflow
+  # Install default native packages for my workflow (some packages might already be included in the base image)
   - type: dnf
     repos:
       cleanup: true
@@ -84,6 +84,16 @@ modules:
         - code
         - mise
         - podman-docker
+        - git
+        - git-lfs
+        - git-delta
+        - gh
+        - gdb
+        - strace
+        - ltrace
+        - btop
+        - jq
+        - tmux
 
         # Shell utilities
         - zsh
@@ -97,6 +107,20 @@ modules:
         - fzf
         - ripgrep
         - fd-find
+
+        # Other development stuff
+        - gcc
+        - gcc-c++
+        - make
+        - cmake
+        - ninja-build
+        - pkgconf-pkg-config
+        - openssl-devel
+        - libffi-devel
+        - bzip2-devel
+        - readline-devel
+        - sqlite-devel
+        - zlib-devel
 
   
   # Install default flatpak packages for my workflow
