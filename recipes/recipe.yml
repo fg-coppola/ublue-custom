@@ -73,12 +73,29 @@ modules:
       nonfree: rpmfusion
     install:
       packages:
+        # Generic GUI applications
         - megasync
         - dolphin-megasync
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+
+        # Development tools
         - code
         - mise
         - podman-docker
+
+        # Shell utilities
+        - zsh
+        - zsh-autosuggestions
+        - zsh-syntax-highlighting
+        - zsh-completions
+        - starship
+        - bat
+        - zoxide
+        - eza
+        - fzf
+        - ripgrep
+        - fd-find
+
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
