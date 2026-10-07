@@ -12,10 +12,16 @@ image-version: latest # You can pin to a specific version of Fedora as well
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  # 1. CONFIGURATION FILES
+
+  # This copies lots of configuration files into the correct places
   - type: files
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+
+  # 2. FONTS
 
   # Install some fonts, including Nerd Fonts and Google Fonts.
   - type: fonts
@@ -32,6 +38,9 @@ modules:
           - Open Sans
           - Inter
 
+
+  # 3. FINGERPRINT
+
   # Install custom fprinting shim for my ASUS Vivobook fingerprint reader
   - type: script
     scripts:
@@ -42,6 +51,9 @@ modules:
     system:
       enabled:
         - fprintd-resume.service
+
+
+  # 4. APPLICATIONS
 
   # Install ProtonVPN client with systemd offline mode to avoid failure during post installation
   - type: script
@@ -66,6 +78,9 @@ modules:
         scope: user
         install:
           - com.discordapp.Discord
+
+
+  # 5. FINALIZATION
 
   - type: initramfs # this regenerates the initramfs to apply any changes made to the kernel modules or drivers
       
