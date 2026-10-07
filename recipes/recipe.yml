@@ -66,10 +66,12 @@ modules:
       cleanup: true
       files:
         - vscode.repo
+        - https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/Fedora_Rawhide/shells:zsh-users:zsh-completions.repo
       keys:
         - https://packages.microsoft.com/keys/microsoft.asc
       copr:
         - jdxcode/mise
+        - atim/starship
       nonfree: rpmfusion
     install:
       packages:
