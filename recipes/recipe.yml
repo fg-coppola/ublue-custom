@@ -3,10 +3,10 @@
 # image will be published to ghcr.io/<user>/<name>
 name: ublue-custom
 # description will be included in the image's metadata
-description: Custom image for my ASUS Vivobook based on Aurora-DX.
+description: Custom image based on Bazzite with selected developer tools and personal customizations.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/aurora-dx-nvidia-open
+base-image: ghcr.io/ublue-os/bazzite-nvidia-open
 image-version: latest # You can pin to a specific version of Fedora as well
 
 # module configuration, executed in order
