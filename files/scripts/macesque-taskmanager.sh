@@ -11,6 +11,6 @@ cd /tmp/macesque-taskmanager
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
 make -j$(nproc)
-sudo make install
+make install
 
 rm -rf /tmp/macesque-taskmanager

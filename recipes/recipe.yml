@@ -118,6 +118,7 @@ modules:
         - make
         - cmake
         - ninja-build
+        - extra-cmake-modules
         - pkgconf-pkg-config
         - openssl-devel
         - libffi-devel
