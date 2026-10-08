@@ -132,6 +132,10 @@ modules:
         - darkly
         - darkly-qt6
 
+  # Install custom macesque-taskmanager application from source
+  - type: script
+    scripts:
+      - macesque-taskmanager.sh
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
