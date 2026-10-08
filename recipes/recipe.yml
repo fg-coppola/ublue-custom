@@ -73,6 +73,7 @@ modules:
         - jdxcode/mise
         - atim/starship
         - luwxs/input-actions-editor
+        - silvigarabis/inputactions
         - deltacopy/darkly
       nonfree: rpmfusion
     install:
@@ -127,6 +128,7 @@ modules:
 
         # Desktop customization
         - input-actions-editor
+        - inputactions-kwin
         - darkly
         - darkly-qt6
 
