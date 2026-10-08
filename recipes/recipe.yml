@@ -72,6 +72,7 @@ modules:
       copr:
         - jdxcode/mise
         - atim/starship
+        - deltacopy/darkly
       nonfree: rpmfusion
     install:
       packages:
@@ -122,6 +123,10 @@ modules:
         - readline-devel
         - sqlite-devel
         - zlib-devel
+
+        # Desktop customization
+        - darkly
+        - darkly-qt6
 
   
   # Install default flatpak packages for my workflow
