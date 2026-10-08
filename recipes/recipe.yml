@@ -118,10 +118,10 @@ modules:
         - make
         - cmake
         - ninja-build
-        - extra-cmake-modules
-        - qt6-qtbase-devel
-        - qt6-qtdeclarative-devel
-        - qt6-qttools
+        # - extra-cmake-modules
+        # - qt6-qtbase-devel
+        # - qt6-qtdeclarative-devel
+        # - qt6-qttools
         - pkgconf-pkg-config
         - openssl-devel
         - libffi-devel
@@ -136,10 +136,10 @@ modules:
         - darkly
         - darkly-qt6
 
-  # Install custom macesque-taskmanager application from source
-  - type: script
-    scripts:
-      - macesque-taskmanager.sh
+  # # Install custom macesque-taskmanager application from source
+  # - type: script
+  #   scripts:
+  #     - macesque-taskmanager.sh
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
