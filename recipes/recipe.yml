@@ -72,6 +72,7 @@ modules:
       copr:
         - jdxcode/mise
         - atim/starship
+        - luwxs/input-actions-editor
         - deltacopy/darkly
       nonfree: rpmfusion
     install:
@@ -125,6 +126,7 @@ modules:
         - zlib-devel
 
         # Desktop customization
+        - input-actions-editor
         - darkly
         - darkly-qt6
 
