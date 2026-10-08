@@ -119,6 +119,9 @@ modules:
         - cmake
         - ninja-build
         - extra-cmake-modules
+        - qt6-qtbase-devel
+        - qt6-qtdeclarative-devel
+        - qt6-qttools
         - pkgconf-pkg-config
         - openssl-devel
         - libffi-devel
