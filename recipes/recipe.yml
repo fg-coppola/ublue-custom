@@ -75,6 +75,7 @@ modules:
         - luwxs/input-actions-editor
         - silvigarabis/inputactions
         - deltacopy/darkly
+        - fuddlesworth/PlasmaZones
       nonfree: rpmfusion
     install:
       packages:
@@ -135,6 +136,7 @@ modules:
         - inputactions-kwin
         - darkly
         - darkly-qt6
+        - plasmazones
 
   # # Install custom macesque-taskmanager application from source
   # - type: script
