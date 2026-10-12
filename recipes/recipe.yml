@@ -163,7 +163,10 @@ modules:
 
   # Copy custom dotfiles with chezmoi
   - type: chezmoi
-    disable-init: true # temporarily disable chezmoi init until the repo is fully set up and ready to be used
+    repository: "https://github.com/fg-coppola/dotfiles.git"
+    all-users: true
+    file-conflict-policy: replace
+    disable-update: true # This is important to avoid overwriting dotfiles that are not committed yet
 
   # 6. FINALIZATION
 
