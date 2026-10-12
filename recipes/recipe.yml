@@ -151,7 +151,13 @@ modules:
         - podman.socket
 
 
-  # 5. FINALIZATION
+  # 5. USER SETTINGS
+
+  # Copy custom dotfiles with chezmoi
+  - type: chezmoi
+    disable-init: true # temporarily disable chezmoi init until the repo is fully set up and ready to be used
+
+  # 6. FINALIZATION
 
   - type: initramfs # this regenerates the initramfs to apply any changes made to the kernel modules or drivers
       
