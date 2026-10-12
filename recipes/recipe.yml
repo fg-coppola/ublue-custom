@@ -131,7 +131,7 @@ modules:
         - dms-greeter
         - material-symbols-fonts
         - matugen
-        - qt6-multimedia
+        - qt6-qtmultimedia
         - i2c-tools
   
   # Install default flatpak packages for my workflow
