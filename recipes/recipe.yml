@@ -131,8 +131,10 @@ modules:
         - dms-greeter
         - material-symbols-fonts
         - matugen
+        - adw-gtk3-theme
         - qt6-qtmultimedia
         - i2c-tools
+        - seahorse
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
