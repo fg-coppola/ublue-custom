@@ -135,6 +135,7 @@ modules:
         - qt6-qtmultimedia
         - i2c-tools
         - seahorse
+        - kdeconnectd
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
