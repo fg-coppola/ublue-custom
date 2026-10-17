@@ -60,6 +60,11 @@ modules:
     scripts:
       - protonvpn.sh
 
+  # Enable Terra repository (on Bazzite it's installed but disabled by default)
+  - type: script
+    snippets:
+      - sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/terra.repo
+
   # Install default native packages for my workflow (some packages might already be included in the base image)
   - type: dnf
     repos:
@@ -136,6 +141,14 @@ modules:
         - i2c-tools
         - seahorse
         - kdeconnectd
+
+        - umbriel-nightly
+        - noctalia
+
+  # Disable Terra repository to prevent runtime conflicts
+  - type: script
+    snippets:
+      - sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/terra.repo
   
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
