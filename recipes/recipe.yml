@@ -102,6 +102,7 @@ modules:
         - btop
         - jq
         - tmux
+        - micro
 
         # Shell utilities
         - zsh
