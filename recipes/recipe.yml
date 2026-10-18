@@ -138,6 +138,7 @@ modules:
         - material-symbols-fonts
         - matugen
         - adw-gtk3-theme
+        - qt6ct
         - qt6-qtmultimedia
         - i2c-tools
         - seahorse
