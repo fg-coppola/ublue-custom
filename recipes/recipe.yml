@@ -154,8 +154,7 @@ modules:
     configurations:
       - notify: false # avoids notification at every boot
         scope: user
-        install:
-          - com.discordapp.Discord
+        
       - notify: false
         scope: system
         install:
@@ -164,8 +163,9 @@ modules:
           - org.gnome.Papers
           - io.github.screwys.Rufin
           - org.gtk.Gtk3theme.adw-gtk3-dark
+          - com.discordapp.Discord
       - notify: false
-        scope: user
+        scope: system
         repo:
           url: https://chrisdkn.github.io/Amethyst-Mod-Manager/amethyst.flatpakrepo
           name: modmanager-origin
