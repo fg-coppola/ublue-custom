@@ -114,7 +114,6 @@ modules:
         - https://mega.nz/linux/repo/Fedora_%OS_VERSION%/x86_64/megasync-Fedora_%OS_VERSION%.x86_64.rpm
         - nautilus
         - https://mega.nz/linux/repo/Fedora_%OS_VERSION%/x86_64/nautilus-megasync-Fedora_%OS_VERSION%.x86_64.rpm
-        - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
         - gnome-keyring
         - gnome-keyring-pam
         - udisks2
@@ -203,6 +202,7 @@ modules:
           - app.zen_browser.zen
           - com.discordapp.Discord
           - org.telegram.desktop
+          - com.bitwarden.desktop
       - notify: false
         scope: system
         repo:
