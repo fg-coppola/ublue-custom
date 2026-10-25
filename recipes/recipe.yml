@@ -124,7 +124,6 @@ modules:
         - tuned-ppd
         - firewalld
         - libva-nvidia-driver
-        - xorg-x11-drv-nvidia-cuda
 
         # 3. Gaming packages
         - steam
@@ -133,7 +132,6 @@ modules:
         - gamemode.i686
         - mangohud
         - mangohud.i686
-        - xorg-x11-drv-nvidia-libs.i686
         - mesa-vulkan-drivers.i686
         - mesa-libGL.i686
 
