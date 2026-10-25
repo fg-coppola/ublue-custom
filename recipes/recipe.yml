@@ -6,7 +6,7 @@ name: ublue-custom
 description: Custom image based on Bazzite with selected developer tools and personal customizations.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-gnome-nvidia-open
+base-image: ghcr.io/blue-build/base-images/fedora-base-nvidia-open
 image-version: latest # You can pin to a specific version of Fedora as well
 
 # module configuration, executed in order
