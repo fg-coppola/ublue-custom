@@ -1,0 +1,14 @@
+[Unit]
+Description=Initialize default Dux Shell and Niri configs if missing
+Before=dms.service
+After=graphical-session-pre.target
+# Runs ONLY if the dms config snippet directory inside niri does not exist yet
+ConditionPathExists=!%h/.config/niri/dms
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dms setup headless --compositor niri --terminal ghostty
+
+[Install]
+WantedBy=niri.service
+WantedBy=default.target

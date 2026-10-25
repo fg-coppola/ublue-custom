@@ -77,12 +77,67 @@ modules:
       nonfree: rpmfusion
     install:
       packages:
-        # Generic GUI applications
+        # 1. Desktop packages (niri + Dux Shell)
+        - niri
+        - repo: copr:copr.fedorainfracloud.org:avengemedia/danklinux
+          packages:
+            - cava
+            - cliphist
+            - dankcalendar
+            - danksearch
+            - dgop
+            - dms-greeter
+            - dux-files
+            - ghostty
+            - greetd
+            - gtk4-layer-shell
+            - material-symbols-fonts
+            - matugen
+            - qt6ct-kde
+            - quickshell
+            - xwayland-satellite
+        - repo: copr:copr.fedorainfracloud.org:avengemedia/dms
+          packages:
+            - dms
+
+        # 2. Desktop extras
+        - chezmoi
+        - adw-gtk3-theme
+        - qt6-qtmultimedia
+        - qt6-qtimageformats
+        - i2c-tools
+        - wtype
+        - kdeconnectd
+        - gnome-disk-utility
+        - xdg-desktop-portal-gnome
+        - xdg-desktop-portal-gtk
         - megasync
+        - nautilus
         - nautilus-megasync
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+        - gnome-keyring
+        - gnome-keyring-pam
+        - udisks2
+        - gvfs
+        - gvfs-mtp
+        - tuned
+        - tuned-ppd
+        - firewalld
+        - libva-nvidia-driver
+        - xorg-x11-drv-nvidia-cuda
 
-        # Development tools
+        # 3. Gaming packages
+        - steam
+        - steam-devices
+        - gamemode
+        - gamemode.i686
+        - mangohud
+        - mangohud.i686
+        - xorg-x11-drv-nvidia-libs.i686
+        - mesa-vulkan-drivers.i686
+        - mesa-libGL.i686
+
+        # 4. Development tools
         - code
         - mise
         - podman-docker
@@ -98,8 +153,13 @@ modules:
         - jq
         - tmux
         - micro
+        - gcc
+        - gcc-c++
+        - make
+        - cmake
+        - ninja-build
 
-        # Shell utilities
+        # 5. Shell utilities
         - zsh
         - zsh-autosuggestions
         - zsh-syntax-highlighting
@@ -112,49 +172,38 @@ modules:
         - ripgrep
         - fd-find
 
-        # Other development stuff
-        - gcc
-        - gcc-c++
-        - make
-        - cmake
-        - ninja-build
+  # Pre-populate /etc/skel with official Dux Shell + Niri default configs at build time
+  - type: script
+    scripts:
+      - dms-skel.sh
 
-        # Desktop customization (niri + DMS)
-        - niri
-        - ghostty
-        - quickshell
-        - dms
-        - cava
-        - cliphist
-        - dankcalendar-git
-        - danksearch
-        - dgop
-        - dms-greeter
-        - material-symbols-fonts
-        - matugen
-        - adw-gtk3-theme
-        - qt6ct
-        - qt6-qtmultimedia
-        - i2c-tools
-        - seahorse
-        - kdeconnectd
-  
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
-    configurations:
-      - notify: false # avoids notification at every boot
-        scope: user
-        
+    configurations:        
       - notify: false
         scope: system
         install:
+          - org.gtk.Gtk3theme.adw-gtk3-dark
+          - com.github.tchx84.Flatseal
+          - io.github.flattool.Warehouse
+          - io.github.kolunmi.Bazaar
+          - net.nokyan.Resources
+          - org.gnome.baobab
+          - org.gnome.Calculator
+          - org.gnome.Clocks
+          - org.gnome.FileRoller
+          - app.drey.KeyRack
+          - com.ranfdev.DistroShelf
           - io.github.diegopvlk.Cine
           - org.gnome.Loupe
           - org.gnome.Papers
           - io.github.screwys.Rufin
-          - org.gtk.Gtk3theme.adw-gtk3-dark
-          - com.discordapp.Discord
+          - io.gitlab.adhami3310.Impression
+          - io.github.seadve.Kooha
+          - com.github.PintaProject.Pinta
           - app.zen_browser.zen
+          - com.discordapp.Discord
+          - org.telegram.desktop
       - notify: false
         scope: system
         repo:
@@ -165,22 +214,27 @@ modules:
           - io.github.Amethyst.ModManager
 
   - type: systemd
+    system:
+      enabled:
+        - greetd.service
+        - tuned.service
+        - tuned-ppd.service
+        - nvidia-powerd.service
+        - firewalld.service
     user:
       enabled:
         # Enable the rootless podman socket for all users upon login
         - podman.socket
+        - gnome-keyring-daemon.socket
+        - dms-init-configs.service
+
+  # Allow kdeconnect through firewall
+  - type: script
+    scripts:
+      - firewall.sh
 
 
-  # 5. USER SETTINGS
-
-  # Copy custom dotfiles with chezmoi
-  - type: chezmoi
-    repository: "https://github.com/fg-coppola/dotfiles.git"
-    all-users: true
-    file-conflict-policy: replace
-    disable-update: true # This is important to avoid overwriting dotfiles that are not committed yet
-
-  # 6. FINALIZATION
+  # 5. FINALIZATION
 
   - type: initramfs # this regenerates the initramfs to apply any changes made to the kernel modules or drivers
       
