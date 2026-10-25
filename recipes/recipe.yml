@@ -1,9 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: ublue-custom
+name: blue-scroll
 # description will be included in the image's metadata
-description: Custom image based on Bazzite with selected developer tools and personal customizations.
+description: Custom Fedora atomic image for developer workflows and gaming on a scrolling WM (Niri + Dux Shell).
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/blue-build/base-images/fedora-base-nvidia-open
