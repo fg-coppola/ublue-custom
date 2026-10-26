@@ -79,7 +79,7 @@ modules:
       packages:
         # 1. Desktop packages (niri + Dux Shell)
         - niri
-        - repo: copr:copr.fedorainfracloud.org:avengemedia/danklinux
+        - repo: copr:copr.fedorainfracloud.org:avengemedia:danklinux
           packages:
             - cava
             - cliphist
@@ -96,7 +96,7 @@ modules:
             - qt6ct-kde
             - quickshell
             - xwayland-satellite
-        - repo: copr:copr.fedorainfracloud.org:avengemedia/dms
+        - repo: copr:copr.fedorainfracloud.org:avengemedia:dms
           packages:
             - dms
 
