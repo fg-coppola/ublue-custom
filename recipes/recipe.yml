@@ -165,11 +165,6 @@ modules:
         - ripgrep
         - fd-find
 
-  # Pre-populate /etc/skel with official Dux Shell + Niri default configs at build time
-  - type: script
-    scripts:
-      - dms-skel.sh
-
   # Install default flatpak packages for my workflow
   - type: default-flatpaks
     configurations:        
