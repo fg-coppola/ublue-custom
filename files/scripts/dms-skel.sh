@@ -1,3 +1,10 @@
+#!/usr/bin/env bash
+
+# Tell this script to exit if there are any errors.
+# You should have this in every custom script, to ensure that your completed
+# builds actually ran successfully without any errors!
+set -oue pipefail
+
 # 1. Pre-populate /etc/skel with official Dux Shell + Niri default configs at build time
 mkdir -p /etc/skel/.config /etc/skel/.local/state
 HOME=/etc/skel XDG_CONFIG_HOME=/etc/skel/.config XDG_STATE_HOME=/etc/skel/.local/state \
