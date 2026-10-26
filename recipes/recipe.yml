@@ -79,26 +79,22 @@ modules:
       packages:
         # 1. Desktop packages (niri + Dux Shell)
         - niri
-        - repo: copr:copr.fedorainfracloud.org:avengemedia:danklinux
-          packages:
-            - cava
-            - cliphist
-            - dankcalendar
-            - danksearch
-            - dgop
-            - dms-greeter
-            - dux-files
-            - ghostty
-            - greetd
-            - gtk4-layer-shell
-            - material-symbols-fonts
-            - matugen
-            - qt6ct-kde
-            - quickshell
-            - xwayland-satellite
-        - repo: copr:copr.fedorainfracloud.org:avengemedia:dms
-          packages:
-            - dms
+        - dms
+        - cava
+        - cliphist
+        - dankcalendar
+        - danksearch
+        - dgop
+        - dms-greeter
+        - dux-files
+        - ghostty
+        - greetd
+        - gtk4-layer-shell
+        - material-symbols-fonts
+        - matugen
+        - qt6ct-kde
+        - quickshell
+        - xwayland-satellite
 
         # 2. Desktop extras
         - chezmoi
