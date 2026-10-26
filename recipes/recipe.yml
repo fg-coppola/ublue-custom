@@ -183,7 +183,7 @@ modules:
           - net.nokyan.Resources
           - org.gnome.baobab
           - org.gnome.Calculator
-          - org.gnome.Clocks
+          - org.gnome.clocks
           - org.gnome.FileRoller
           - app.drey.KeyRack
           - com.ranfdev.DistroShelf
