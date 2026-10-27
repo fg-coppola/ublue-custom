@@ -91,6 +91,8 @@ modules:
         - code
         - mise
         - podman-docker
+        - qemu-kvm
+        - libvirt
         - git
         - git-lfs
         - git-delta
