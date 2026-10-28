@@ -134,7 +134,18 @@ modules:
         - mangohud
         - mangohud.i686
 
-        # 4. Development tools
+        # 4. Virtualization (libvirt + virt-manager + KVM/QEMU)
+        - virt-manager
+        - virt-install
+        - virt-viewer
+        - libvirt-daemon-config-network
+        - libvirt-daemon-kvm
+        - qemu-kvm
+        - edk2-ovmf
+        - swtpm
+        - swtpm-tools
+
+        # 5. Development tools
         - code
         - mise
         - podman-docker
@@ -155,7 +166,7 @@ modules:
         - cmake
         - ninja-build
 
-        # 5. Shell utilities
+        # 6. Shell utilities
         - zsh
         - zsh-autosuggestions
         - zsh-syntax-highlighting
@@ -213,6 +224,7 @@ modules:
         - tuned-ppd.service
         - nvidia-powerd.service
         - firewalld.service
+        - libvirtd.socket
     user:
       enabled:
         # Enable the rootless podman socket for all users upon login
