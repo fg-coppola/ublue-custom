@@ -6,7 +6,7 @@ name: blue-scroll
 description: Custom Fedora atomic image for developer workflows and gaming on a scrolling WM (Niri + Dux Shell).
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/blue-build/base-images/fedora-base-nvidia-open
+base-image: ghcr.io/ublue-os/base-main
 image-version: 44 # You can pin to a specific version of Fedora as well
 
 # module configuration, executed in order
@@ -21,7 +21,15 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
 
-  # 2. FONTS
+  # 2. KERNEL MODULES & NVIDIA DRIVERS
+
+  # Install pre-built akmods and open Nvidia drivers from ublue-os/akmods
+  - type: akmods
+    base: main
+    nvidia-driver: nvidia-open
+
+
+  # 3. FONTS
 
   # Install some fonts, including Nerd Fonts and Google Fonts.
   - type: fonts
@@ -39,7 +47,7 @@ modules:
           - Inter
 
 
-  # 3. FINGERPRINT
+  # 4. FINGERPRINT
 
   # Install custom fprinting shim for my ASUS Vivobook fingerprint reader
   - type: script
@@ -53,7 +61,7 @@ modules:
         - fprintd-resume.service
 
 
-  # 4. APPLICATIONS
+  # 5. APPLICATIONS
 
   # Install ProtonVPN client with systemd offline mode to avoid failure during post installation
   - type: script
@@ -117,19 +125,14 @@ modules:
         - tuned
         - tuned-ppd
         - firewalld
-        - libva-nvidia-driver
 
-        # 3. Gaming packages
+        # 3. Gaming packages (Nvidia & Mesa 32-bit libs are handled by the akmods module)
         - steam
         - steam-devices
         - gamemode
         - gamemode.i686
         - mangohud
         - mangohud.i686
-        - nvidia-driver-libs.i686
-        - nvidia-driver-cuda-libs.i686
-        - mesa-vulkan-drivers.i686
-        - mesa-libGL.i686
 
         # 4. Development tools
         - code
@@ -214,7 +217,6 @@ modules:
       enabled:
         # Enable the rootless podman socket for all users upon login
         - podman.socket
-        - gnome-keyring-daemon.socket
         - dms-init-configs.service
 
   # Allow kdeconnect through firewall
@@ -223,7 +225,7 @@ modules:
       - firewall.sh
 
 
-  # 5. FINALIZATION
+  # 6. FINALIZATION
 
   - type: initramfs # this regenerates the initramfs to apply any changes made to the kernel modules or drivers
       
