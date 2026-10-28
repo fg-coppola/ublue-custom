@@ -26,8 +26,7 @@ modules:
   # Install pre-built akmods and open Nvidia drivers from ublue-os/akmods
   - type: akmods
     base: main
-    install:
-      - nvidia
+    install: [] # this is left empty because the nvidia-driver option does all the work
     nvidia-driver: nvidia-open
 
 
